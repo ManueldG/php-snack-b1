@@ -30,7 +30,7 @@ $access = "Accesso Riuscito";
 
 $name = ( preg_match( '/([a-z]+)/i' ,$_GET['name'])) ? true : '<script>alert("nome errato Accesso Negato!!")</script>';
 $email = preg_match( '/^(\w*)@(\w*)\x2E(\w*)$/' ,$_GET['email']) ? true : '<script>alert("email errata Accesso Negato!!")</script>';
-$age  = ( preg_match( '/(\d){1,2}/' ,intval($_GET['age']) ) ) ? true : '<script>alert("età errata Accesso Negato!!")</script>';
+$age  = ( preg_match( '/(\d){2,1}/' ,intval($_GET['age']) ) ) ? true : '<script>alert("età errata Accesso Negato!!")</script>';
 
 $access = ($name===true&&$email===true&&$age===true)===true ? $access : ($name.' '.$email.' '.$age);
 
