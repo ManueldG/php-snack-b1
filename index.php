@@ -90,8 +90,12 @@ for ($i=0 ; $i<15 ; ){
     <hr>
 
     <div class="controllo">
-            <form action="#" >
-                <input type="text" name="name">
+            <form action="" >
+                <input type="text" name="name" required="required">
+                </input>
+                <input type="number" name="age" required="required">
+                </input>
+                <input type="email" name="email" required="required">
                 </input>
             
             </form>
