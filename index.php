@@ -32,7 +32,7 @@ $name = ( preg_match( '/^([a-z]{3,20})$/i' ,$_GET['name'])) ? '' : '<script>aler
 $email = preg_match( '/^(\w*)@(\w*)\x2E(\w*)$/' ,$_GET['email']) ? '' : '<script>alert("email errata Accesso Negato!!")</script>';
 $age  = ( preg_match( '/^(\d){1,3}$/' ,(intval($_GET['age'])) ) ) ? '' : '<script>alert("età errata Accesso Negato!!")</script>';
 
-$access = ($name===''&&$email===''&&$age==='')===true ? $access : ($name.' '.$email.' '.$age);
+$access = ($name===''&&$email===''&&$age==='')===true ? $access : ($name.' '.$email.' '.$age.' ACCESSO NEGATO');
 
 var_dump($_GET['age']);
 
