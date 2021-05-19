@@ -1,3 +1,7 @@
+body{
+    padding: 30px;
+}
+
 .tabellone{
     display:flex;
     justify-content: space-between;
@@ -6,3 +10,13 @@
     flex-direction: row;
 }
 
+.controllo {
+    margin: 20px;
+}
+
+.pop-array ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
