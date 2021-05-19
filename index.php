@@ -34,7 +34,7 @@ $age  = ( preg_match( '/^(\d){2,3}$/' ,(intval($_GET['age'])) ) ) ? '' : '<scrip
 
 $access = ($name===''&&$email===''&&$age==='')===true ? $access : ($name.' '.$email.' '.$age.' ACCESSO NEGATO');
 
-var_dump($_GET['age']);
+var_dump($age);
 
 /*-----------------------------------------------------------------------------------------------------------------*/
 
