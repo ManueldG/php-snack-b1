@@ -90,7 +90,11 @@ for ($i=0 ; $i<15 ; ){
     <hr>
 
     <div class="controllo">
+            <form action="#" >
+                <input type="text" name="name">
+                </input>
             
+            </form>
             <? echo($access); ?>
             
     </div>
