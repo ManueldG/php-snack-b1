@@ -97,6 +97,7 @@ for ($i=0 ; $i<15 ; ){
                 </input>
                 <input type="email" name="email" required="required">
                 </input>
+                <input type="submit" value="invia">
             
             </form>
             <? echo($access); ?>
