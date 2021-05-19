@@ -21,26 +21,94 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
 
 */
 
-$matches = array();
-echo"dssagf";
-$matches = ["HOME"=>"Olimpia Milano" ,"GUEST"=>"Cantù",rand(20,80),rand(20,80)];
+$matches[] = ["HOME"=>"Dinamo Sassari","GUEST"=>"Venezia","P Home"=>rand(20,80),"P Guest"=>rand(20,80)];
+$matches[] = ["HOME"=>"Olimpia Milano","GUEST"=>"Cantù","P Home"=>rand(20,80),"P Guest"=>rand(20,80)];
+$matches[] = ["HOME"=>"Brindisi","GUEST"=>"Virtus Bologna","P Home"=>rand(20,80),"P Guest"=>rand(20,80)];
 
-var_dump($matches);
+/*----------------------------------------------------------------------------------------------------------------*/
+$access = "Accesso Riuscito";
+
+$name = ( preg_match( '/([a-z]+)/i' ,$_GET['name'])) ? true : '<script>alert("nome errato Accesso Negato!!")</script>';
+$email = preg_match( '/^(\w*)@(\w*)\x2E(\w*)$/' ,$_GET['email']) ? true : '<script>alert("email errata Accesso Negato!!")</script>';
+$age  = ( preg_match( '/(\d){3}/' ,$_GET['age'])) ? true : '<script>alert("età errata Accesso Negato!!")</script>';
+
+$access = ($name===true&&$email===true&&$age===true)===true ? $access : ($name.' '.$email.' '.$age);
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+$array[] = rand(0,100);
+
+for ($i=0 ; $i<15 ; ){
+    $rnd = rand(0,100);
+
+    if (array_search($rnd,$array)===false){
+        $array[] = $rnd;
+        $i++;
+    }
+    
+      
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <link rel="stylesheet" href="http://casaalmada.hostinggratis.it/doc/css/reset.css">
 <link rel="stylesheet" href="css/style.css">
-
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>php snack b1</title>
 </head>
-<body >
+<body>
+
+    <div class="tabellone">
+        <?for ( $i=0 ; $i<count($matches) ; $i++) :?>
+
+        <div class="squadre">
+            <div class="home">
+                <? echo $matches[$i]["HOME"]; ?>
+            </div>
+            <div class="guest">
+                <? echo $matches[$i]["GUEST"]; ?>
+            </div>
+        </div>
+            <div class="punti">
+                <div class="p-guest">
+                    <? echo $matches[$i]["P Home"];  ?>
+                </div>
+                <div class="p-home">
+                    <? echo $matches[$i]["P Guest"]; ?>
+                </div>
+            </div>
+        
+    <?endfor?>
+    </div>
+
+    <hr>
+
+    <div class="controllo">
+            
+            <? echo($access); ?>
+            
+    </div>
+
+    <hr>
+
+    <div class="pop-array">
+        <ul>
+            <?for ( $j=0 ; $j<(count($array)-1) ; $j++) :?>
+                <li>
+                    <? echo $array[$j]; ?>
+                </li>
+            <?endfor?>
+        </ul>
+    
+    </div>
 
 
 
 </body>
+
 </html>
