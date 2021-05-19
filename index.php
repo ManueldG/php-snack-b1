@@ -33,8 +33,8 @@ $email = preg_match( '/^(\w*)@(\w*)\x2E(\w*)$/' ,$_GET['email']) ? true : '<scri
 $age  = ( preg_match( '/(\d){1,2}/' ,$_GET['age'])) ? true : '<script>alert("età errata Accesso Negato!!")</script>';
 
 $access = ($name===true&&$email===true&&$age===true)===true ? $access : ($name.' '.$email.' '.$age);
-var_dump($access);
-var_dump($age);
+
+var_dump($_GET['age']);
 /*-----------------------------------------------------------------------------------------------------------------*/
 
 $array[] = rand(0,100);
